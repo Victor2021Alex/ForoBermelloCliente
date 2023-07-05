@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.Models
 {
-    public class Course
+    public class EmpleadoAddress
     {
-        public int CourseId { get; set; }
-        public string CourseName { get; set; }
+        public int EmpleadoId { get; set; }
+        public Empleado Empleado { get; set; }
     }
 }

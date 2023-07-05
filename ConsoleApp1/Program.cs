@@ -10,19 +10,19 @@ class Program
         //consultarCliente();
         //modificarCliente();
         //eliminarClientee();
-        consultarClienteFunciones();
+        //consultarClienteFunciones();
     }
 
     public static void agregarCliente()
     {
         Console.WriteLine("Metodo agregar cliente");
         SchoolContext context = new SchoolContext();
-        Cliente std = new Cliente();
+        Empleado std = new Empleado();
         std.nombre = "Victor";
-        context.Clientes.Add(std);
+        //context.Clientes.Add(std);
         context.SaveChanges();
       
-        Console.WriteLine("Codigo: "+ std.ClienteId + " Nombre: "+ std.nombre);
+        //Console.WriteLine("Codigo: "+ std.ClienteId + " Nombre: "+ std.nombre);
 
     }
 
@@ -30,11 +30,11 @@ class Program
     {
         Console.WriteLine("Metodo consultar cliente");
         SchoolContext context = new SchoolContext();
-        List<Cliente> listClientes= context.Clientes.ToList() ;
+        //List<Empleado> listClientes= context.Clientes.ToList() ;
 
-        foreach (var item in listClientes)
+        //foreach (var item in listClientes)
         {
-            Console.WriteLine("Codigo: " + item.ClienteId + " Nombre: " + item.nombre);
+            //Console.WriteLine("Codigo: " + item.ClienteId + " Nombre: " + item.nombre);
         }
         
     }
@@ -43,10 +43,10 @@ class Program
     {
         Console.WriteLine("Metodo consultar estudiante por Id");
         SchoolContext context = new SchoolContext();
-        Cliente std = new Cliente();
-        std = context.Clientes.Find(1);
+        Empleado std = new Empleado();
+       // std = context.Clientes.Find(1);
 
-       Console.WriteLine("Codigo: " + std.ClienteId + " Nombre: " + std.nombre);
+       //Console.WriteLine("Codigo: " + std.ClienteId + " Nombre: " + std.nombre);
       
     }
 
@@ -54,12 +54,12 @@ class Program
     {
         Console.WriteLine("Metodo modificar Cliente");
         SchoolContext context = new SchoolContext();
-        Cliente std = new Cliente();
-        std = context.Clientes.Find(1);
+        Empleado std = new Empleado();
+        //std = context.Clientes.Find(1);
 
         std.nombre = "";
         context.SaveChanges();
-        Console.WriteLine("Codigo: " + std.ClienteId + " Nombre: " + std.nombre);
+        //Console.WriteLine("Codigo: " + std.ClienteId + " Nombre: " + std.nombre);
 
     }
 
@@ -67,31 +67,31 @@ class Program
     {
         Console.WriteLine("Metodo eliminar estudiante");
         SchoolContext context = new SchoolContext();
-        Cliente std = new Cliente();
-        std = context.Clientes.Find(2);
+        Empleado std = new Empleado();
+        //std = context.Clientes.Find(2);
         context.Remove(std);
         context.SaveChanges();
-        Console.WriteLine("Codigo: " + std.ClienteId + " Nombre: " + std.nombre);
+        //Console.WriteLine("Codigo: " + std.ClienteId + " Nombre: " + std.nombre);
 
     }
     public static void consultarClienteFunciones()
     {
         Console.WriteLine("Metodo consultar clientes con el uso de funciones");
         SchoolContext context = new SchoolContext();
-        List<Cliente> listClientes;
+        List<Empleado> listClientes;
 
-        Console.WriteLine("Cantidad de registros: " + context.Clientes.Count());
-        Cliente std = context.Clientes.First();
+        //Console.WriteLine("Cantidad de registros: " + context.Clientes.Count());
+        //Empleado std = context.Clientes.First();
 
-        Console.WriteLine("Primer elemento de la tabla:" +  std.ClienteId + "-" +std.nombre);
+        //Console.WriteLine("Primer elemento de la tabla:" +  std.ClienteId + "-" +std.nombre);
 
 
-        listClientes = context.Clientes.Where(s => s.nombre.StartsWith("V")).ToList();
+        //listClientes = context.Clientes.Where(s => s.nombre.StartsWith("V")).ToList();
         
         
-        foreach (var item in listClientes)
+        //foreach (var item in listClientes)
         {
-            Console.WriteLine("Codigo: " + item.ClienteId + " Nombre: " + item.nombre);
+         //   Console.WriteLine("Codigo: " + item.ClienteId + " Nombre: " + item.nombre);
         }
         
 
